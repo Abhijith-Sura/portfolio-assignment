@@ -1,0 +1,653 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitignore
+package.json
+postcss.config.js
+public/favicon.ico
+public/index.html
+README.md
+src/App.css
+src/App.js
+src/components/ProfileGalleryApp.jsx
+src/index.css
+src/index.js
+src/reportWebVitals.js
+tailwind.config.js
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="package.json">
+{
+  "name": "profile-gallery-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "lucide-react": "^0.263.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+</file>
+
+<file path="postcss.config.js">
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+
+---
+
+### 4️⃣ **.gitignore**
+```
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+</file>
+
+<file path="public/index.html">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Profile Gallery Dashboard - Interactive profile and image gallery"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Profile Gallery Dashboard</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
+</file>
+
+<file path="README.md">
+# Profile Gallery Dashboard
+
+A modern, responsive React dashboard featuring an interactive profile section with tabbed navigation and a dynamic image gallery with upload functionality.
+
+## 🚀 Features
+
+- **Tab-Based Profile Navigation**: Switch between About Me, Experiences, and Recommended sections
+- **Interactive Image Gallery**: Carousel-based gallery showing 3 images at a time
+- **Image Upload**: Add your own images via file upload
+- **Hover Effects**: Stunning cyan glow effects on images
+- **Click to Expand**: Click images to expand them in place
+- **Fully Responsive**: Works seamlessly on mobile, tablet, and desktop
+- **Dark Theme**: Modern dark gradient background with glassmorphism effects
+
+## 📋 Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+## 🛠️ Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/profile-gallery-dashboard.git
+cd profile-gallery-dashboard
+```
+
+2. **Install dependencies**
+```bash
+npm install
+```
+
+3. **Start the development server**
+```bash
+npm start
+```
+
+The app will open at [http://localhost:3000](http://localhost:3000)
+
+## 📦 Build for Production
+```bash
+npm run build
+```
+
+This creates an optimized production build in the `build/` folder.
+
+## 🚀 Deployment
+
+### Deploy to Vercel
+```bash
+npm install -g vercel
+vercel
+```
+
+### Deploy to Netlify
+```bash
+npm run build
+# Then drag and drop the build folder to Netlify
+```
+
+### Deploy to GitHub Pages
+```bash
+npm install --save-dev gh-pages
+```
+
+Add to package.json:
+```json
+"homepage": "https://yourusername.github.io/profile-gallery-dashboard",
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+```
+
+Then deploy:
+```bash
+npm run deploy
+```
+
+## 🎨 Technologies Used
+
+- **React 18**: UI library
+- **Tailwind CSS**: Utility-first CSS framework
+- **Lucide React**: Beautiful icon library
+- **FileReader API**: For image upload functionality
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1023px
+- **Desktop**: ≥ 1024px
+
+## ✨ Key Features Explained
+
+### Profile Widget
+- Three switchable tabs with smooth transitions
+- Content area with fade effect at bottom
+- Hover effects on all interactive elements
+
+### Gallery Widget
+- Displays 3 images at a time
+- Previous/Next navigation with disabled states
+- Upload button to add new images
+- Click images to expand (1.5x scale) with cyan glow
+- Hover for preview glow effect
+
+## 🎯 Usage
+
+1. **Switch Tabs**: Click on "About Me", "Experiences", or "Recommended" tabs
+2. **Navigate Gallery**: Use arrow buttons to scroll through images
+3. **Upload Images**: Click "+ ADD IMAGE" button and select an image file
+4. **Expand Images**: Click any image to expand it in place (click again to collapse)
+5. **Hover Effects**: Hover over images to see the cyan glow effect
+
+## 📁 Project Structure
+```
+profile-gallery-dashboard/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   └── ProfileGalleryApp.jsx
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── index.css
+├── package.json
+├── tailwind.config.js
+└── README.md
+```
+
+## 🐛 Troubleshooting
+
+### Tailwind styles not working
+- Ensure `tailwind.config.js` content paths are correct
+- Check that `index.css` imports Tailwind directives
+
+### Images not uploading
+- Verify browser supports FileReader API (all modern browsers)
+- Check file input accepts image/* attribute
+
+### Build fails
+- Clear node_modules and reinstall: `rm -rf node_modules && npm install`
+- Check for syntax errors in JSX
+
+## 📄 License
+
+MIT License - feel free to use this project for your portfolio or assignments!
+
+## 👨‍💻 Author
+
+Your Name - [Your GitHub](https://github.com/yourusername)
+
+## 🙏 Acknowledgments
+
+- Images from [Unsplash](https://unsplash.com)
+- Icons from [Lucide](https://lucide.dev)
+- Built with Create React App
+</file>
+
+<file path="src/App.css">
+.App {
+  min-height: 100vh;
+  width: 100%;
+}
+</file>
+
+<file path="src/App.js">
+import React from 'react';
+import './App.css';
+import ProfileGalleryApp from './components/ProfileGalleryApp';
+
+function App() {
+  return (
+    <div className="App">
+      <ProfileGalleryApp />
+    </div>
+  );
+}
+
+export default App;
+</file>
+
+<file path="src/components/ProfileGalleryApp.jsx">
+import React, { useState, useRef } from 'react';
+import { ChevronLeft, ChevronRight, HelpCircle, Plus, Grid } from 'lucide-react';
+
+const ProfileGalleryApp = () => {
+  const [activeTab, setActiveTab] = useState('about');
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [expandedImage, setExpandedImage] = useState(null);
+  const [images, setImages] = useState([
+    'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1618556450994-a6a128ef0d9d?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1618556450991-2f1af64e8191?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1618556450967-e7e5c6f3e825?w=800&h=600&fit=crop'
+  ]);
+  
+  const fileInputRef = useRef(null);
+  
+  const tabs = [
+    { id: 'about', label: 'About Me' },
+    { id: 'experiences', label: 'Experiences' },
+    { id: 'recommended', label: 'Recommended' }
+  ];
+
+  const content = {
+    about: "Hello! I'm Dave, your sales rep here from Salesforce. I've been working at this awesome company for 3 years now.\n\nI was born and raised in Albany, NY & have been living in Santa Carla for the past 10 years my wife Tiffany and my 4 year old twin daughters- Emma and Ella. Both of them are just starting school, so my calendar is usually blocked between 9-10 AM. This is a...",
+    experiences: "Throughout my career at Salesforce, I've had the opportunity to work with incredible clients and close deals worth millions. I specialize in enterprise solutions and have been consistently ranking in the top 10% of sales representatives.\n\nMy approach focuses on understanding client needs deeply and providing tailored solutions that drive real business value. I believe in building long-term relationships rather than just closing deals.",
+    recommended: "I highly recommend checking out our latest CRM features that can transform your sales pipeline. The automation tools have been game-changers for teams looking to scale efficiently.\n\nAlso, if you're interested in sales methodologies, I suggest reading 'The Challenger Sale' and attending our quarterly webinars on modern sales strategies."
+  };
+
+  const handlePrevImage = () => {
+    setCurrentImageIndex((prev) => (prev === 0 ? Math.max(0, images.length - 3) : Math.max(0, prev - 1)));
+  };
+
+  const handleNextImage = () => {
+    setCurrentImageIndex((prev) => (prev >= images.length - 3 ? 0 : Math.min(images.length - 3, prev + 1)));
+  };
+
+  const handleAddImage = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileSelect = (e) => {
+    const file = e.target.files?.[0];
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setImages([...images, event.target.result]);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleImageClick = (idx) => {
+    setExpandedImage(expandedImage === idx ? null : idx);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex">
+      {/* Left Empty Section - Responsive */}
+      <div className="hidden lg:block lg:w-1/2"></div>
+      
+      {/* Right Content Section */}
+      <div className="w-full lg:w-1/2 flex flex-col justify-center items-start p-8 lg:p-12 space-y-8">
+        
+        {/* Profile Widget */}
+        <div className="w-full max-w-2xl bg-slate-800/50 backdrop-blur-md rounded-3xl shadow-2xl shadow-slate-900/50 p-8 relative border border-slate-700/30 hover:shadow-slate-700/20 hover:shadow-3xl transition-all duration-500">
+          {/* Help Icon */}
+          <div className="absolute top-6 left-6 group cursor-pointer">
+            <div className="w-6 h-6 bg-slate-700/50 rounded-full flex items-center justify-center group-hover:bg-slate-600/70 group-hover:shadow-lg group-hover:shadow-slate-500/30 transition-all duration-300">
+              <HelpCircle className="w-4 h-4 text-slate-400 group-hover:text-slate-200 transition-colors duration-300" />
+            </div>
+          </div>
+
+          {/* Tab Navigation */}
+          <div className="flex justify-center mb-8 bg-slate-950 rounded-3xl p-2 shadow-inner">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex-1 px-8 py-4 rounded-2xl text-base font-medium transition-all duration-300 relative ${
+                  activeTab === tab.id
+                    ? 'bg-slate-800 text-white shadow-lg shadow-slate-700/50'
+                    : 'bg-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30'
+                }`}
+                style={{
+                  boxShadow: activeTab === tab.id ? '0 0 20px rgba(100, 116, 139, 0.3)' : 'none'
+                }}
+              >
+                {tab.label}
+                {activeTab === tab.id && (
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-slate-600/20 to-slate-700/20 animate-pulse"></div>
+                )}
+              </button>
+            ))}
+          </div>
+
+          {/* Content Area */}
+          <div className="relative max-h-64 overflow-hidden bg-slate-900/20 rounded-2xl p-6 border border-slate-700/20">
+            <p className="text-slate-300 text-base leading-relaxed whitespace-pre-line">
+              {content[activeTab]}
+            </p>
+            {/* Fade effect at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-800/50 to-transparent pointer-events-none"></div>
+          </div>
+        </div>
+
+        {/* Separator */}
+        <div className="w-full max-w-2xl">
+          <div className="h-1 bg-gradient-to-r from-transparent via-slate-700/50 to-transparent rounded-full shadow-lg shadow-slate-700/20"></div>
+        </div>
+
+        {/* Gallery Widget */}
+        <div className="w-full max-w-2xl bg-slate-800/50 backdrop-blur-md rounded-3xl shadow-2xl shadow-slate-900/50 p-8 border border-slate-700/30 hover:shadow-slate-700/20 hover:shadow-3xl transition-all duration-500">
+          {/* Help Icon */}
+          <div className="absolute group cursor-pointer">
+            <div className="w-6 h-6 bg-slate-700/50 rounded-full flex items-center justify-center -ml-8 group-hover:bg-slate-600/70 group-hover:shadow-lg group-hover:shadow-slate-500/30 transition-all duration-300">
+              <HelpCircle className="w-4 h-4 text-slate-400 group-hover:text-slate-200 transition-colors duration-300" />
+            </div>
+          </div>
+
+          {/* Gallery Header */}
+          <div className="flex items-center justify-between mb-6">
+            <div className="bg-slate-950 px-8 py-3 rounded-3xl shadow-inner border border-slate-800">
+              <h2 className="text-white text-lg font-medium">Gallery</h2>
+            </div>
+            
+            <div className="flex items-center space-x-4">
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleFileSelect}
+                className="hidden"
+              />
+              <button
+                onClick={handleAddImage}
+                className="bg-slate-700/60 hover:bg-slate-600/80 text-white px-6 py-2 rounded-3xl text-sm font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-slate-500/50 hover:shadow-xl hover:scale-105 border border-slate-600/30"
+                style={{
+                  boxShadow: '0 4px 20px rgba(71, 85, 105, 0.3)'
+                }}
+              >
+                <Plus className="w-4 h-4" />
+                <span>ADD IMAGE</span>
+              </button>
+              
+              <button
+                onClick={handlePrevImage}
+                disabled={currentImageIndex === 0}
+                className="w-12 h-12 bg-gradient-to-br from-slate-600 to-slate-700 hover:from-slate-500 hover:to-slate-600 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-slate-500/50 disabled:opacity-50 disabled:cursor-not-allowed border border-slate-500/30"
+              >
+                <ChevronLeft className="w-6 h-6 text-white" />
+              </button>
+              
+              <button
+                onClick={handleNextImage}
+                disabled={currentImageIndex >= images.length - 3}
+                className="w-12 h-12 bg-gradient-to-br from-slate-600 to-slate-700 hover:from-slate-500 hover:to-slate-600 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-slate-500/50 disabled:opacity-50 disabled:cursor-not-allowed border border-slate-500/30"
+              >
+                <ChevronRight className="w-6 h-6 text-white" />
+              </button>
+            </div>
+          </div>
+
+          {/* Image Gallery */}
+          <div className="flex items-center space-x-4">
+            {/* Grid Icon */}
+            <div className="flex-shrink-0">
+              <Grid className="w-6 h-6 text-slate-500" />
+            </div>
+            
+            {/* Images */}
+            <div className="flex space-x-4 overflow-hidden">
+              {images.slice(currentImageIndex, currentImageIndex + 3).map((img, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => handleImageClick(idx)}
+                  className={`flex-1 aspect-[4/3] rounded-2xl overflow-hidden shadow-lg cursor-pointer group relative transition-all duration-500 ${
+                    expandedImage === idx 
+                      ? 'scale-150 z-50 border-4 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.8)]' 
+                      : 'border-2 border-transparent hover:border-cyan-400/70 hover:shadow-[0_0_30px_rgba(34,211,238,0.6)]'
+                  }`}
+                  style={{
+                    boxShadow: expandedImage === idx 
+                      ? '0 0 40px rgba(34, 211, 238, 0.8), 0 20px 60px rgba(0, 0, 0, 0.6)' 
+                      : '0 4px 20px rgba(0, 0, 0, 0.3)',
+                    transform: expandedImage === idx ? 'scale(1.5)' : 'scale(1)'
+                  }}
+                >
+                  <img
+                    src={img}
+                    alt={`Gallery ${currentImageIndex + idx + 1}`}
+                    className={`w-full h-full object-cover transition-all duration-500 ${
+                      expandedImage === idx 
+                        ? 'brightness-100' 
+                        : 'group-hover:scale-105 group-hover:brightness-110'
+                    }`}
+                  />
+                  {/* Hover Glow Effect - Only when not expanded */}
+                  {expandedImage !== idx && (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/10 via-transparent to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                      <div className="absolute inset-0 shadow-[inset_0_0_30px_rgba(34,211,238,0)] group-hover:shadow-[inset_0_0_30px_rgba(34,211,238,0.4)] transition-all duration-300 rounded-2xl"></div>
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProfileGalleryApp;
+</file>
+
+<file path="src/index.css">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+</file>
+
+<file path="src/index.js">
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+</file>
+
+<file path="src/reportWebVitals.js">
+const reportWebVitals = onPerfEntry => {
+  if (onPerfEntry && onPerfEntry instanceof Function) {
+    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+      getCLS(onPerfEntry);
+      getFID(onPerfEntry);
+      getFCP(onPerfEntry);
+      getLCP(onPerfEntry);
+      getTTFB(onPerfEntry);
+    });
+  }
+};
+
+export default reportWebVitals;
+</file>
+
+<file path="tailwind.config.js">
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+</file>
+
+</files>
